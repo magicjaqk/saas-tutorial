@@ -72,7 +72,11 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  courses       Course[]
+
+  // For SaaS Tutorial
+  courses      Course[]
+  stripeId     String   @unique
+  isSubscribed Boolean  @default(false)
 }
 
 model VerificationToken {
